@@ -8,17 +8,32 @@
             <aside class="container-fluid col-4 bg-dark rounded mt-2">
                 <h2 class="text-center text-white">Burgers to Devour!</h2>
                 <ul>
-                    
+                    {{#each burgers}}
+                        {{#unless devoured}}
+                        <div type="button" class="card mx-auto bg-active mt-2 btn-outline-warning change-eaten" data-id="{{id}}">
+                            <div class="card-body">
+                                {{burger_name}}
+                            </div>
+                        </div>
+                        {{/unless}}
+                    {{/each}}
                 </ul>
             </aside>
             <div class="container-fluid col-1">
                 <br><br><br>
-                <button type="button" class="btn btn-danger btn-lg ml-2">DEVOUR!</button>
             </div>
             <aside class="container-fluid col-4 bg-dark rounded mt-2">
                 <h2 class="text-center text-white">Devoured Burgers!</h2>
                 <ul>
-                    
+                    {{#each burgers}}
+                        {{#if devoured}}
+                        <div class="card mx-auto bg-active mt-2 bg-success">
+                            <div class="card-body">
+                                {{burger_name}}
+                            </div>
+                        </div>
+                        {{/if}}
+                    {{/each}}
                 </ul>
             </aside>
         </div>
@@ -27,6 +42,7 @@
                 <h3 class="text-center text-white">Enter a Burger to be Devoured</h3>
                 <div class="form-group">
                     <textarea class="form-control" id="newBurger" rows="4" placeholder="Enter Burger Here"></textarea>
+                    <button type="submit" class="btn btn-danger btn-lg mt-3 mx-auto">ADD TO LIST!</button>
                 </div>
             </form>
         </div>
