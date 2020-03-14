@@ -15,9 +15,9 @@ const orm = {
             cb(data);
         });
     },
-    updateOne: function(table, colVal, val, cb) {
-        let query = "UPDATE ?? SET ?? = ? WHERE ?? = false"
-        connection.query(query, [table, colVal, val, colVal], (err,data) =>{
+    updateOne: function(table, colVal, id, cb) {
+        let query = "UPDATE ?? SET ?? = true WHERE id = ?"
+        connection.query(query, [table, colVal, id, colVal], (err,data) =>{
             if (err) throw err;
             cb(data);
         })
