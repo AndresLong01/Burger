@@ -1,7 +1,7 @@
 $(function() {
     $(".change-eaten").on("click", function(event) {
         let id = $(this).data("id");
-        $.ajax("/api/cats/" +id, {
+        $.ajax("/api/burgers/" +id, {
             type: "PUT",
             data: id
         }).then(function () {
@@ -12,7 +12,7 @@ $(function() {
     $(".create-form").on("submit", function(event) {
         event.preventDefault();
         let newBurger = {
-            burger_name: $("#newBurger").val().trim()
+            burger_name: $("#nb").val().trim()
         }
         $.ajax("/api/burgers", {
             type: "POST",

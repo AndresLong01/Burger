@@ -16,7 +16,7 @@ if (process.env.JAWSDB_URL) {
 
 connection.connect((err)=>{
     if (err) throw err;
-    console.log("Connection Success");
+    // console.log("Connection Success");
 });
 
 module.exports = connection;

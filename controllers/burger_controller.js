@@ -11,14 +11,14 @@ router.get("/", function(req, res) {
     });
 });
 
-router.post("/api/burger", function(req, res) {
+router.post("/api/burgers", function(req, res) {
     console.log(req.body);
-    burger.insertOne("burger_name", req.body.newBurger, function(data) {
+    burger.insertOne("burger_name", req.body.burger_name, function(data) {
         res.json({ id: data.insertId });
     });
 });
 
-router.put("/api/burger/:id", function(req, res) {
+router.put("/api/burgers/:id", function(req, res) {
     let id = req.params.id;
     console.log(id);
     burger.updateOne(id, function(result) {

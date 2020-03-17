@@ -15,5 +15,5 @@ app.set("view engine", "handlebars");
 app.use(routes);
 
 app.listen(PORT, function(){
-    console.log("Server is listening now");
-})
+    // console.log("Server is listening now");
+});
